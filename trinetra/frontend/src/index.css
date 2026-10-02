@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body {
+  background: #030712;
+  background-image: radial-gradient(60rem 30rem at 80% -10%, rgba(0, 240, 255, 0.07), transparent 60%);
+  color: #cbd5e1;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+@layer components {
+  .glass {
+    @apply rounded-xl border border-glow/15 bg-white/[0.03] backdrop-blur-md;
+    box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.03), 0 8px 32px rgba(0, 0, 0, 0.45);
+  }
+  .tele { @apply font-mono text-xs text-slate-400; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-glow disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-glow { @apply btn border border-glow/50 bg-glow/10 text-glow hover:bg-glow/20; }
+  .btn-ghost { @apply btn border border-white/10 text-slate-300 hover:bg-white/5; }
+  .field { @apply w-full rounded-md border border-white/10 bg-ink/60 px-2 py-1.5 font-mono text-xs text-slate-200 focus:border-glow/60 focus:outline-none; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
